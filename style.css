@@ -1,0 +1,851 @@
+/* --- Variables globales & Reset --- */
+:root {
+    --bg-color: #0b0b0b;
+    --card-bg: #161616;
+    --text-color: #ffffff;
+    --text-muted: #aaaaaa;
+    --accent-color: #d4ff2a; /* Vert lime fluo de la maquette */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    padding: 0 8%;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #1c1c1c;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: var(--text-color);
+}
+
+/* --- Boutons & Liens --- */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #000;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-icon {
+    border: 1px solid #333;
+    color: var(--text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.btn-icon:hover {
+    background-color: #1c1c1c;
+    border-color: var(--text-muted);
+}
+
+/* --- Section Héro (Accueil) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    margin-bottom: 35px;
+    font-weight: 800;
+}
+
+.hero-text h1 span {
+    color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+    display: block;
+}
+
+/* --- Section Projets --- */
+.projects {
+    padding: 60px 0;
+}
+
+.projects h2 {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+.project-img img {
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    display: block;
+}
+
+.project-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.project-info p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.project-info strong {
+    color: #fff;
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.project-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Section Info Rapide (Accueil) --- */
+.about-brief {
+    padding: 80px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.about-brief h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+}
+
+.about-brief-content .highlight {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+/* --- Page À Propos Complète (`a-propos.html`) --- */
+.about-page {
+    padding: 60px 0;
+}
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.about-intro h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.about-description .highlight {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.about-description p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.about-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.about-banner-img {
+    margin-bottom: 80px;
+}
+
+.about-banner-img img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* --- Section Compétences (Badges) --- */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 60px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.skills-section h2 {
+    font-size: 1.6rem;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-badge {
+    background-color: var(--card-bg);
+    border: 1px solid #252525;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* --- Section Expériences --- */
+.experience-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 80px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.experience-section h2 {
+    font-size: 1.6rem;
+}
+
+.exp-item {
+    margin-bottom: 40px;
+}
+
+.exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.exp-meta h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.exp-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.exp-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* --- Section Formulaire & Contact --- */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    padding: 100px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.contact-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    background-color: var(--card-bg);
+    border: 1px solid #252525;
+    color: #fff;
+    padding: 14px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.btn-submit {
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 14px 35px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: opacity 0.3s;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid #1c1c1c;
+    text-align: left;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsive (Mobile - Version longue à droite de votre image) --- */
+@media (max-width: 900px) {
+    body {
+        padding: 0 4%;
+    }
+    
+    .hero {
+        flex-direction: column-reverse;
+        text-align: left;
+        padding: 60px 0;
+    }
+    
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .project-card, 
+    .about-intro, 
+    .skills-section, 
+    .experience-section, 
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .exp-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+}/* --- Section Projets --- */
+.projects {
+    padding: 60px 0;
+}
+
+.projects h2 {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 100px;
+    align-items: start;
+}
+
+.project-img {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.project-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.project-details {
+    border-top: 1px solid #222;
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+
+.project-details h4 {
+    font-size: 0.8rem;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #1c1c1c;
+    font-size: 0.9rem;
+}
+
+.details-label {
+    color: var(--text-muted);
+}
+
+.details-value {
+    color: #fff;
+}
+
+.project-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.project-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.project-link:hover {
+    border-color: var(--accent-color);
+}.projects-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: -35px; /* Permet de le rapprocher du titre principal */
+    margin-bottom: 50px; /* Crée un espace propre avant le premier projet */
+    max-width: 600px; /* Évite que le texte ne s'étale sur toute la largeur */
+    line-height: 1.5;
+}/* --- Section Info Rapide (Accueil) --- */
+.about-brief {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 80px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.about-brief h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.about-brief-content .highlight {
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.about-brief-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.about-brief-text p {
+    margin-bottom: 15px;
+}
+
+.about-more-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 4px;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.about-more-link:hover {
+    opacity: 0.8;
+}
+
+/* --- Section Formulaire & Contact --- */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    padding: 100px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.contact-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contact-text-block {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-text-block a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+}
+
+.contact-text-block a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}/* --- Page À Propos Complète (`about.html`) --- */
+.about-page {
+    padding: 60px 0;
+}
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+.about-intro h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.about-description .highlight {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.about-description p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.about-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Fixation de l'image de la bannière comme sur la maquette */
+.about-banner-img {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px 0;
+}
+
+.about-banner-img img {
+    width: 100%;
+    max-width: 500px; /* Aligne la taille sur le modèle Figma */
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* --- Section Compétences --- */
+.skills-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 60px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.skills-section h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.skills-content .section-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* --- Section Expériences --- */
+.experience-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    padding: 80px 0;
+    border-top: 1px solid #1c1c1c;
+}
+
+.experience-section h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.exp-item {
+    border-bottom: 1px solid #1c1c1c;
+    padding-bottom: 30px;
+}
+
+.exp-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.exp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.exp-meta h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.exp-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.exp-company {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.exp-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* On s'assure que les icônes à l'intérieur des cercles ont la bonne taille */
+.social-icons .btn-icon i {
+    font-size: 1.1rem;
+}.btn-icon {
+    border: 1px solid #333;
+    color: var(--text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;      /* Important pour le centrage */
+    justify-content: center;   /* Centre horizontalement */
+    align-items: center;       /* Centre verticalement */
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s;
+}.btn-icon {
+    border: 1px solid #333;
+    color: var(--text-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: inline-flex;      /* Obligatoire pour le centrage local */
+    justify-content: center;   /* Centre horizontalement */
+    align-items: center;       /* Centre verticalement */
+    text-decoration: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Force la taille des polices d'icônes Font Awesome en local */
+.btn-icon i {
+    font-size: 1.1rem;
+    line-height: 1;
+}.btn-icon svg {
+    display: block;
+}/* Force l'affichage et la taille des icônes SVG sur le site */
+.btn-icon svg {
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+/* Aligne correctement le bouton et les icônes à côté */
+.about-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}/* Correction ultime pour afficher les icônes de contact sur toutes les pages */
+.contact-section .social-icons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    margin-top: 25px !important;
+}
+
+/* Force l'affichage et la taille des éléments enfants */
+.contact-section .social-icons a {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #222 !important;
+}
+
+.contact-section .social-icons svg {
+    display: block !important;
+    width: 18px !important;
+    height: 18px !important;
+    fill: #ffffff !important;
+}
